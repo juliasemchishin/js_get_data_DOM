@@ -10,7 +10,11 @@ for (const span of spans) {
 
   const valueNumber = value.split(',').join('');
 
-  spanValue.push(+valueNumber);
+  if (!isNaN(valueNumber) && valueNumber !== '') {
+    const number = Number(valueNumber);
+
+    spanValue.push(number);
+  }
 }
 
 const total = spanValue.reduce(
